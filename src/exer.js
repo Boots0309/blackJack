@@ -96,3 +96,13 @@ let ageCheck = 101;
 
 
     // Arrays
+    // let mySelf = ["Joshua", 43, true]
+
+let message = ["Hey, how's it going", 
+    "I'm great, thank you! How about you?", 
+    "All good. Been working on my portfolio lately."
+]
+
+let newMessage = "Same here";
+
+message.push(newMessage);

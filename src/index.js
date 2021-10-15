@@ -17,7 +17,10 @@ function startGame() {
 }
 
 function cardDeal() {
-    cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1];
+    cardsEl.textContent = "Cards: "
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " ";
+    }
     sumEl.textContent = "Sum: " + sum;
 
     if (sum <= 20) {
@@ -35,5 +38,7 @@ function cardDeal() {
 function cardDraw() {
     let thirdCard = Math.floor((Math.random() * 10) + 2);
     sum += thirdCard;
+    cards.push(thirdCard);
+    console.log(cards);
     startGame();
 }
