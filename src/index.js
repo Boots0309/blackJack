@@ -1,8 +1,8 @@
 // create 2 variables, firstCard and secondCard.
 // Set their values to a random number between 2 - 11
 
-let firstCard = Math.floor((Math.random() * 10) + 2);
-let secondCard = Math.floor((Math.random() * 10) + 2);
+let firstCard = getRandomCard();
+let secondCard = getRandomCard();
 let cards = [firstCard, secondCard]
 let hasBlackJack = false;
 let isAlive = true;
@@ -11,6 +11,20 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 let sum = firstCard + secondCard;
+
+function getRandomCard() {
+
+    let randomCard = Math.floor( Math.random() * 13) + 1;
+
+    if (randomCard > 10) {
+        return 10;
+    } else if (randomCard === 1) {
+        return 11;
+    } else {
+        return randomCard;
+    }
+};
+
 
 function startGame() {
     cardDeal();
@@ -36,7 +50,7 @@ function cardDeal() {
 };
 
 function cardDraw() {
-    let thirdCard = Math.floor((Math.random() * 10) + 2);
+    let thirdCard = getRandomCard();
     sum += thirdCard;
     cards.push(thirdCard);
     console.log(cards);
